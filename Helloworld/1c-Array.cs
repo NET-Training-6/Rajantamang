@@ -1,35 +1,29 @@
-class ArrayLerner
+class ArrayLearner
 {
     public void LearnArrays()
     {
-        //one dimensional arays
-        byte[] ages = { 18, 89, 56, 34, 55 };
-        var x = ages[4];// x have 55 of ages (index of ages)
-        //ages[5]= 33;
+        // One dimensional arrays
+        byte[] ages = { 56, 89, 12, 34, 55, 33 };
+        var x = ages[4];
+
         var l = ages.Length;
         Console.WriteLine(l);
 
+        var numbers = new int[100];
 
-        int [] numbers = new int[100];//fix size arrays with any types of datatye
+        // Multi dimensional array
+        var matrix = new double[20, 10];
+        // 45   89
+        // 33   55
 
-        //Multi dimensional arrays
-        double[,] matrix = new double[2,2];
-        //or
-        //var matrix = new double[2,2];
+        matrix[0, 0] = 45;
+        matrix[0, 1] = 89;
+        matrix[1, 0] = 33;
+        matrix[1, 1] = 55;
 
-        matrix[0,0]= 45;
-        matrix[0,1]= 25;
-        matrix[1,0]= 50;
-        matrix[1,1]= 22;
-
-        //jagged array
+        // Jagged array
         var jArray = new decimal[20][];
-        jArray [0]= new decimal[]{2,5,45,25,9};
-        jArray [1]= new decimal[]{45,22,65};
-        
-
-
-
-
+        jArray[0] = new decimal[] { 2, 3, 4, 5, 7 };
+        jArray[1] = new decimal[] { 21, 30, 47 };        
     }
 }

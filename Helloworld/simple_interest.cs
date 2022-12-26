@@ -20,8 +20,7 @@
         // Console.WriteLine($"Compound Interest of {P} for {t} years at {r}% is {ci}");
 
         //Console.ReadKey();
-        ArrayLerner Al=new ();
-        Al.LearnArrays();
+        
 
 
     }
