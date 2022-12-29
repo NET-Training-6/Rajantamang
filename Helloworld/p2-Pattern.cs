@@ -10,10 +10,11 @@ class NumPattern
                 Console.Write(j);
             }
             Console.WriteLine();
+            
         }
-        for(i=1; i<=6; i++)
+         for(i=6; i>=1; i--)
         {
-            for (j=i;j<=6; j++)
+            for (j=i;j>=1; j--)
             {
                 Console.Write(i);
             }
