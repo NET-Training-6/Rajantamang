@@ -11,9 +11,9 @@ class NumPattern
             }
             Console.WriteLine();
         }
-        for(i=6; i>=1; i--)
+        for(i=1; i<=6; i++)
         {
-            for (j=i;j<=6; j--)
+            for (j=i;j<=6; j++)
             {
                 Console.Write(i);
             }
