@@ -57,15 +57,18 @@ class EntryPoint
         // var r2 = new Room(12, 10, "Yello", 15);
         // Console.WriteLine(r2);
 
-        var r1 = new Rectangle(34.5, 12.25);
-        r1.CalculatArea();
-        r1.CalPerimeter();
-        r1.PrintDetails();
+        // var r1 = new Rectangle(34.5, 12.25);
+        // r1.CalculatArea();
+        // r1.CalPerimeter();
+        // r1.PrintDetails();
 
-        var s1 = new Square(25.5);
-        s1.CalculatArea();
-        s1.CalPerimeter();
-        s1.PrintDetails();
+        // var s1 = new Square(25.5);
+        // s1.CalculatArea();
+        // s1.CalPerimeter();
+        // s1.PrintDetails();
+
+        var l1 = new Production("Rajan Tamang", 31, 16, 4);        
+        l1.Details();
 
 
 

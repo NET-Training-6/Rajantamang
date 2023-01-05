@@ -26,7 +26,7 @@ class Production : Staff
     public int Calculateleave()=> TotalDays- (WeekHoliday+DaysOfPresent); 
     public virtual void Details()
     {
-        Console.WriteLine($"the staff name= {NameOfStaff} have total week holiday={WeekHoliday} and his total present={DaysOfPresent} ");
+        Console.WriteLine($"the staff  {NameOfStaff} have take {Calculateleave()} leave and his total present is {DaysOfPresent} days. ");
     }   
 }
 
