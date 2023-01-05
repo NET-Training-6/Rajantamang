@@ -7,7 +7,7 @@ Interface 1 have some method definitions
 Class 2 and Class 3 implements Interface 1
 */
 
-class Production
+class Production : Staff
 {
     string NameOfStaff;
     byte NumberOfStaff;
@@ -23,19 +23,41 @@ class Production
         WeekHoliday = wh;
          
     }
-    public int Calculateleave()=> TotalDays- (WeekHoliday+DaysOfPresent);    
+    public int Calculateleave()=> TotalDays- (WeekHoliday+DaysOfPresent); 
+    public virtual void Details()
+    {
+        Console.WriteLine($"the staff name= {NameOfStaff} have total week holiday={WeekHoliday} and his total present={DaysOfPresent} ");
+    }   
 }
 
 class Marketing:Production
 {
     
-    public Marketing(int td, int dp, int wh): base (td, dp,wh)
+    public Marketing(string ns,int td, int dp, int wh): base (ns,td, dp,wh)
     {
        
     }
 
 }
-class HRM
+class HRM : Staff
 {
-    
+    public string NameOfDept;
+    public string NameOfStaff;
+    byte NumberOfStaff;
+
+
+    public void Details()
+    {
+        Console.WriteLine($"the staff name= {NameOfStaff} who is belong to department= {NameOfDept} have ");
+    }
+}
+
+
+interface Staff 
+{
+    public void Details()
+    {
+      
+
+    }
 }

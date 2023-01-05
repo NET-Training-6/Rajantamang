@@ -10,6 +10,7 @@ class Pattern
                 Console.Write("#"); // ######
             }
             Console.WriteLine();
+            
          }
 
         for(x=1; x<=5; x++)
