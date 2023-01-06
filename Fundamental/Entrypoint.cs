@@ -67,8 +67,12 @@ class EntryPoint
         // s1.CalPerimeter();
         // s1.PrintDetails();
 
-        var l1 = new Production("Rajan Tamang", 31, 16, 4);        
-        l1.Details();
+        // var l1 = new Production("Rajan Tamang", 31, 16, 4);        
+        // l1.Details();
+
+         Add name1=new();
+         name1.Name();
+         
 
 
 
