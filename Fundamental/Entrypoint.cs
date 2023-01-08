@@ -72,6 +72,11 @@ class EntryPoint
 
          Add name1=new();
          name1.Name();
+
+        // Exercise5 str = new();
+        // str.stories();
+
+        
          
 
 
