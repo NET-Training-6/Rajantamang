@@ -1,73 +1,53 @@
-// I have a string variable called address=  "Tinkune, kathmandu, Nepal"
-//1. print country locality
-//2. print city name
-//3. print country name
+// List of somethinbg
 
-class Add
+using System;
+using System.Collections.Generic;
+
+class CollectionLearner
 {
-
-
-    public void Name()
+    public void learnLists()
     {
-        /*string address = "Tinkune, Kathmandu, Nepal";
+        /* List<int> numbers = new List<int>(){12457, 1212, 1213};
+         numbers.Add(2342);
+         numbers.Add(1234);
+         numbers.Add(2145);
+         numbers.Add(12456);
+         numbers.Remove(1234);
 
-        var name = address.Split(", ");
-        var locality = name[0] ;
-        var city = name[1];
-        var country = name[2];
+         foreach(var num in numbers)
+         {
+             // Console.WriteLine(num);
+         }*/
 
-        Console.WriteLine($"The Name of locality is {locality} ");
-        Console.WriteLine($"The city name is {city} " );
-        Console.WriteLine($"The country name is {country} ");
-        */
+        List<string> namespeople = new List<string>() { "Rajan ", "Ramesh yonjan", "Ipshika Bhattarai", "Puja ", "Sagar KC", "Aaryan Maharjan", "Santosh Karki", "Muna Shrestha", "Harke-Kanchha", "Haku-Kale" };
 
-        /*string address = "Tinkune, Kathmandu-Nepal";
-
-        char[] delimiterChars = { ' ', ',',  '-' };
-
-        var name = address.Split(delimiterChars );
-        var locality = name[0] ;
-        var city = name[1];
-        var country = name[2];
-
-        Console.WriteLine($"The Name of locality is {locality} ");
-        Console.WriteLine($"The city name is {city} " );
-        Console.WriteLine($"The country name is {country} ");*/
-
-
-        // we have paragraph 
-        string story = @"One day, a fox became very hungry as he went to search for some food. He searched high and low, but couldn’t find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer’s wall.";
-
-        //char[] delimiterChars = { ' ', ',',  '.' };
-        //count number of words, sentence and character
-        int wrd, l, s, sent;
-        l = 0;
-        wrd = 1;
-        s=0;
-        sent = 0;
-        while (l <= story.Length - 1)
+        foreach (var name in namespeople)
         {
-            if (story[l] == ' ' )
+            //Console.WriteLine(name.ToUpper());
+
+            if (name.Length <= 6)
             {
-                wrd++;
+                // Console.WriteLine(name.ToUpper());
             }
-
-            l++;
-
         }
-        Console.Write("Total number of words in the story is : {0}\n", wrd);
+        // Create list of at least 10 numbers abd print in console only the numbers multiple of 3 and 5.
 
-        while (s <= story.Length -1)
+        List<int> numbers = new List<int>() { 15, 25, 12, 21, 30, 60, 17, 180, 66, 75 };
+
+
+        foreach (var num in numbers)
         {
-            if (story[s] == '.' )
+            if (num % 3 == 0 && num % 5 == 0)
             {
-                sent++;
+                Console.WriteLine(num);
             }
-
-            s++;
-
         }
-        Console.Write("Total number of sentence in the story is : {0}\n", sent);
+        // Create list of date of births of 8 people. Print those dobs in console oldest first.
+
+        List<DateTime> Birth = new List<DateTime>();
+        
+
+
 
 
 

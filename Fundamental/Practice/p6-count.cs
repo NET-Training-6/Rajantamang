@@ -1,31 +1,60 @@
+using System;
+
 public class Exercise5
 {
-    public  void stories()
+
+    string story = @"One day, a fox became very hungry as he went to search for some food.\\
+        He searched high and low, but couldn’t find something that he could eat.\\
+        Finally, as his stomach rumbled, he stumbled upon a farmer’s wall.";
+    public void countsentences()
     {
-        string story = "One day, a fox became very hungry as he went to search for some food. He searched high and low, but couldn’t find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer’s wall.";
-         
-        int  wrd, l;
+        var delimiterChars = new char[] { '.', '?' };
+        var paragraph = story.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
 
-        // Console.Write("\n\nCount the total number of words in a string :\n");
-        // Console.Write("------------------------------------------------------\n");
-        // Console.Write("Input the string : ");
-        // story = Console.ReadLine();
+        int Sentences = paragraph.Length;
 
-        l = 0;
-        wrd = 1;
+        Console.WriteLine("Total number of sentence in the story is: " + Sentences);
 
-        /* loop till end of string */
-        while (l <= story.Length - 1)
+        var seprator = new char[] { ' ', '\n' };
+        var Specialchar = new char[] { '.', '?', ',', '-' };
+        var sent = story.Split(seprator, StringSplitOptions.RemoveEmptyEntries);
+        int word = sent.Length;
+        Console.WriteLine("Total number of sentence in the story is: " + word);
+
+        foreach (var w in sent)
         {
-            /* check whether the current character is white space or new line or tab character*/
-            if (story[l] == ' ' || story[l] == '\n' || story[l] == '\t')
-            {
-                wrd++;
-            }
+            var sabda = w;
+            Console.WriteLine("#######################################");
 
-            l++;
+            foreach (char sc in Specialchar)
+            {
+                if (sabda.Contains(sc))
+                {
+                    sabda = sabda.Replace(sc.ToString(), "");
+                }
+            }
+            Console.WriteLine(sabda);
+
         }
 
-        Console.Write("Total number of words in the string is : {0}\n", wrd);
+
+
+    }
+    public void CountCharacters()
+    {
+        int x = story.Length;
+        int noOfSpaces = 0;
+        foreach (var c in story)
+        {
+            if (c == ' ')
+            {
+                noOfSpaces++;
+            }
+            else
+            {
+                Console.Write($"{c}\t");
+            }
+        }
+        Console.WriteLine($"Character Counts: {x - noOfSpaces} and characters are following:");
     }
 }

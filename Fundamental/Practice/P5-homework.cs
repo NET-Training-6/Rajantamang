@@ -7,6 +7,8 @@ Interface 1 have some method definitions
 Class 2 and Class 3 implements Interface 1
 */
 
+using System;
+
 class Production : Staff
 {
     string NameOfStaff;
@@ -23,11 +25,8 @@ class Production : Staff
         WeekHoliday = wh;
          
     }
-    public int Calculateleave()=> TotalDays- (WeekHoliday+DaysOfPresent); 
-    public virtual void Details()
-    {
-        Console.WriteLine($"the staff  {NameOfStaff} have take {Calculateleave()} leave and his total present is {DaysOfPresent} days. ");
-    }   
+    public int Calculateleave()=> TotalDays- (WeekHoliday+DaysOfPresent);
+    public virtual void Details() => Console.WriteLine($"the staff  {NameOfStaff} have take {Calculateleave()} leave and his total present is {DaysOfPresent} days. ");
 }
 
 class Marketing:Production

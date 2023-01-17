@@ -1,3 +1,5 @@
+using System;
+
 class Pattern
 {
     public void LearnPattern()

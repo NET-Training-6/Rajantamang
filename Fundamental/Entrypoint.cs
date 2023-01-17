@@ -70,11 +70,17 @@ class EntryPoint
         // var l1 = new Production("Rajan Tamang", 31, 16, 4);        
         // l1.Details();
 
-         Add name1=new();
-         name1.Name();
+        //  Add name1=new();
+        //  name1.Name();
 
         // Exercise5 str = new();
-        // str.stories();
+        // str.countsentences();
+
+        // CollectionLearner cl= new ();
+        // cl.learnLists();
+
+        LINQ even = new();
+        even.Test();
 
         
          

@@ -1,4 +1,6 @@
 
+using System;
+
 class MethodLearn
 {
     //method that returns nothing and takes no arguements

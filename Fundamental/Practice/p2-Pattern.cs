@@ -1,3 +1,5 @@
+using System;
+
 class NumPattern
 {
     public void PatternNumber()
