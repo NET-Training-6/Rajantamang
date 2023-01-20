@@ -79,8 +79,14 @@ class EntryPoint
         // CollectionLearner cl= new ();
         // cl.learnLists();
 
-        LINQ even = new();
-        even.Test();
+        // LINQ even = new();
+        // even.Test();
+
+        // LINQ employee1 = new();
+        // employee1.LearnToQuery();
+
+        Country1 count = new();
+        count.QueryCountry();
 
         
          

@@ -11,6 +11,15 @@ class LINQ
 
     List<string> names = new() { "Bishnu", "Sagar", "Rajan", "Ram", "Pooja", "Ipshikha", "Aaryan" };
 
+    List<Employee> employees = new()
+    {  
+        new Employee {Name= "Rajan Tamang", Age= 21, Department= "HR", Designation = "Software Engineer"},
+        new Employee {Name= "Shyam Rana", Age= 20, Department= "HR", Designation = "Software Engineer"},
+        new Employee {Name= "Sagar KC", Age= 28, Department= "R & D", Designation = "QA"},
+        new Employee {Name= "Aaryan Maharjan", Age= 27, Department= "IT", Designation = "IT Officer"},
+        new Employee {Name= "Ipshika Bhattarai", Age= 22, Department= "Marketing", Designation = "Marketing Manager"}  
+        
+    };
     public void Test()
     {
         //Get all even numbers in "numbers"
@@ -29,20 +38,31 @@ class LINQ
         }
         //At this poing"evenNumbers"
 
-        var evenNums = numbers.Where(num1 => num1 % 2 == 0);
+        //var evenNums = numbers.Where(num1 => num1 % 2 == 0);
+
+        var evenNums = from num in numbers
+                    where num%2 ==0
+                    select num;
         foreach (var n in evenNums)
         {
             //Console.WriteLine(n);
         }
         //Console.WriteLine("And The Odd Numbers are follows: ");
 
-        var oddNums = numbers.Where(num => num % 2 == 1);
+        var oddNums = numbers.Where(num => num % 2 == 1); //method syntax
+
+        oddNums = from num in numbers       // Expression Syntax
+                    where num%2==1
+                    select num;
         foreach (var odd in oddNums)
         {
             //Console.WriteLine(odd);
         }
 
-        var numEnding = numbers.Where(num => num.ToString().EndsWith("0"));
+        var numEnding = numbers.Where(num => num.ToString().EndsWith("0")); // method syntax
+        numEnding = from num in numbers                 // Expression syntax
+                    where num.ToString().EndsWith("0")
+                    select num;
 
         foreach (var end in numEnding)
         {
@@ -81,17 +101,64 @@ class LINQ
             Console.WriteLine(name);
         }
 
+    }
+
+    public void LINQDay2()
+    {
+        //1. find if "numbers" array contain any even number
+
+        var hasEven = numbers.Any(n => n % 2 == 0); //Quantifiers: Any, All
+
+        //2. find if "numbers" array has all even number
+        var AllEven = numbers.All(n => n % 2 == 0);
+
+        //3. Get first 5 elements from "numbers"
+        var takeFive = numbers.Take(5);
 
 
+        //4. Get 5 elements skipping first 2 from "numbers"
+        var skipTake = numbers.Skip(2).Take(5);
+    }
+    public void LearnToQuery()
+    {
+        //1. Get all employee in HR department
 
+        var HREmployee = employees.Where(emp => emp.Department == "HR");
 
+        //2. Get names of employee in HR department
+        var EmployeeName = employees.Where(emp => emp.Department == "HR").Select(emp => emp.Name);
+        EmployeeName = from emp in employees
+                        where emp.Department=="HR"
+                        select emp.Name;
+        
+        foreach(var em in employees)
+        { 
+            //Console.WriteLine($"name: {em.Name} ");  
 
+        }
+        //3. Get all Software Engineers under age of 22
+        var post = employees.Where(emp => emp.Designation == "Software Engineer" && emp.Age<22);
 
-
-
-
+        foreach(var em in post)
+        {
+           // Console.WriteLine($"Name: {em.Name}\nDepartment: {em.Department}\nDesignation:{em.Designation} \nand Age is:  {em.Age}\n");
+            
+        }
 
 
     }
+}
+
+public class Employee
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public string Department { get; set; }
+    public string Designation { get; set; }
+
+
+
+
 
 }
