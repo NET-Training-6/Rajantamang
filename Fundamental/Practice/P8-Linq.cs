@@ -20,18 +20,17 @@ public class Country1
         new Country{Name = "New Zealand", Continent = "Australia", Area = 9817823783.23, GDP = 823798472}
 
     };
-
     public void QueryCountry()
     {
         //1. Find all asian countries.
-        var AllCountry = countries.Where(c => c.Continent == "Asia");//.Select(c => c.Name); //method syntax
-        // AllCountry = from c in countries
-        //              where c.Continent == "Asia"
-        //              select c.Name;
+        var AllCountry = countries.Where(c => c.Continent == "Asia").Select(c => c.Name); //method syntax
+        AllCountry = from c in countries
+                     where c.Continent == "Asia"
+                     select c.Name;
 
         foreach (var con in AllCountry)
         {
-            //Console.WriteLine($"The Asian countries name are: {con.Name} ");
+            Console.WriteLine($"The Asian countries name are: {con} ");
 
         }
 
@@ -45,8 +44,6 @@ public class Country1
 
 
     }
-
-
 }
 public class Country
 {
@@ -57,9 +54,3 @@ public class Country
     public double GDP { get; set; }
 
 }
-
-
-
-
-// And answer following in both method and expression syntax:
-

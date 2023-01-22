@@ -1,4 +1,5 @@
 using Basics;
+using System.IO;
 class EntryPoint
 {
     public static void Main()
@@ -85,8 +86,20 @@ class EntryPoint
         // LINQ employee1 = new();
         // employee1.LearnToQuery();
 
-        Country1 count = new();
-        count.QueryCountry();
+        // Country1 count = new();
+        // count.QueryCountry();
+       
+
+        //EntryPoint ent = new();
+        
+
+        FileAndDirectory file = new  FileAndDirectory();
+        file.Learnfiles();
+        file.NewFolderAndFile();
+        file.Folders();
+
+        
+
 
         
          
