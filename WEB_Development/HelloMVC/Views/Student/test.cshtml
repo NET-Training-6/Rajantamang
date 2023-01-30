@@ -1,0 +1,48 @@
+﻿<h1> Students Name</h1>
+
+@{
+	String[] Names = { "Rajan Tamang", "Sagar Khatri", "Aaryan Maharjan", "Pooja Bhattarai", "Ipshika Bhattarai" };
+	int[] numbers = { 9,8,4,3,1,2,1,3,0,9};
+	var evens = numbers.Where(n => n % 2 == 0);
+	var odd = numbers.Where(n => n % 2 == 1);
+
+
+}
+<h2> All numbers</h2>
+ <div>
+	 @foreach( int num in numbers)
+	{
+		<span> @num</span>
+	}
+</div>
+<h2> Even</h2>
+@foreach (int n in evens)
+{
+	<i class="display-6">@(n+" ") </i>
+}
+<h2> Odds</h2>
+@foreach (int n in odd)
+{
+	<i class="display-6">@(n + " ") </i>
+}
+
+
+<h2>Dynamic</h2>
+<ol>
+	@foreach (string name in Names)
+	{
+		<li> @name</li>
+
+
+	}
+</ol>
+
+<h2>Static</h2>
+
+<ol>
+	<li> Rajan Tamang</li>
+	<li> Sagar Khatri</li>
+	<li> Aaryan Maharjan</li>
+	<li> Pooja Bhattarai</li>
+	<li> Ipshika Bhattarai</li>
+</ol>

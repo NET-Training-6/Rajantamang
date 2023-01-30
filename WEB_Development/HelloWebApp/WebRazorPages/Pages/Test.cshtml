@@ -1,0 +1,21 @@
+﻿@page "/myfirstpage"
+
+<h1> Hello! Welcom to my first Website </h1>
+
+@for(int i=1; i<=100;i++)
+{
+	if (i % 2 == 0)
+	{
+		<h3>@i</h3>
+	}
+}
+<br />
+<br />
+
+@for (int j=1; j<=100;j++)
+{
+	if (j.ToString().Contains("9"))
+	{
+		<h3>@j</h3>
+	}
+}
