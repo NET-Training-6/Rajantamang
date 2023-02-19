@@ -1,0 +1,23 @@
+﻿
+<h2>Multiplication table</h2>
+@model (int form, int to)
+
+
+
+    <div class="row">
+    @for (int j = Model.form; j <=Model.to; j++)
+    {	
+        <div class=" col-3 ">
+          @for (int i = 1; i <= 10; i++)
+                {
+                    <p>@j*@i =@(j * i)</p>
+                    <br />
+                }
+
+        </div>
+   }
+
+ </div>
+
+
+

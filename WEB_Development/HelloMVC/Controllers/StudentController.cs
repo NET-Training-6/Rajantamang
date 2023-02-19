@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HelloMVC.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HelloMVC.Controllers
 {
@@ -6,34 +7,43 @@ namespace HelloMVC.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            //List of students
+            Student student1 = new()
+            {
+                Name = "Ram",
+                Address = "KTM",
+                Email = "Ram@gmail.com",
+                Gender = Sex.Male,
+				Dob = DateTime.Now
+			};
+
+            Student student2 = new()
+            {
+                Name = "RamHari",
+                Address = "Bhaktapur",
+				Email = "RamHari@gmail.com",
+                Gender = Sex.Male,
+                Dob =  DateTime.Now
+            };
+
+            Student student3 = new()
+            {
+                Name = "Shiya",
+                Address = "lalitpur",
+                Email = "Shiya@gmail.com",
+				Gender = Sex.Female,
+				Dob = DateTime.Now
+			};
+
+            List<Student> students = new() { student1, student2, student3 };
+            return View(students);
         }
 
         public IActionResult Test()
         {
-            return View();
+			int[] numbers = { 9, 8, 4, 3, 1, 2, 1, 3, 0, 9 };
+			return View(numbers);
         }
     }
-
-    public class DropdownController : Controller
-    {
-        public ActionResult Items()
-        {
-            // Logic to retrieve items for the dropdown menu
-            List<DropdownItem> items = new List<DropdownItem>
-            {
-                new DropdownItem { Name = "Item 1", Link = "#1" },
-                new DropdownItem { Name = "Item 2", Link = "#2" },
-                new DropdownItem { Name = "Item 3", Link = "#3" },
-            };
-            return View(items);
-        }
-    }
-
-    public class DropdownItem
-    {
-        public string Name { get; set; }
-        public string Link { get; set; }
-    }
-}
+ }
 

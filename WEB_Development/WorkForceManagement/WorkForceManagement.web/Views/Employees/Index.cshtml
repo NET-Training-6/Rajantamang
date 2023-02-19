@@ -1,0 +1,39 @@
+﻿
+@model List<Employee>
+
+	<table class="table">
+
+		<tr>
+			<th>Image</th>
+			<th> ID</th>
+			<th> Name</th>
+			<th> Address</th>
+			<th> Gender</th>
+			
+			<th> </th>
+		</tr>
+		@foreach (Employee emp in Model)
+	{
+		<tr>
+			<td>
+				@{
+					var avatar = string.IsNullOrEmpty(emp.ProfileImagePath) ? "/Image/rajan.jpg" : emp.ProfileImagePath;
+				}
+				<img src="@avatar" alt="Person" height="30" />
+			</td>
+			<td> @emp.Id</td>
+			<td> @emp.Name</td>
+			<td> @emp.Address</td>
+			<td> @emp.Gender</td>
+			
+			<td> <a href="/employees/details/@emp.Id"><i class="bi bi-eye"></i></a>
+				<a href="/employees/Edit/@emp.Id"> <i class="bi bi-pen text-warning"></i></a>
+				<a href="/employees/Delete/@emp.Id"> <i class="bi bi-trash text-danger"></i></a>
+				
+			</td>
+
+		</tr>
+		
+	}
+	
+	</table>

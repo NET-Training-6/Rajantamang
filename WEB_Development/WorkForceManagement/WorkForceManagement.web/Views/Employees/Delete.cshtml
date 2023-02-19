@@ -1,0 +1,20 @@
+﻿@model Employee
+
+
+
+<div class="card" style="width: 50rem;">
+    <div class="card-body">
+        <form class="text-align-content-center text-uppercase" action="/employees/delete" method="post" >  
+            <h1>Are you sure to Delete  for @Model.Name?</h1>
+            <input type="hidden" asp-for="Id"/>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-danger w-25 float-end">YES</button>
+
+            </div>
+            <div class="col-12">
+                <a asp-action="index" type="submit" class="btn btn-success w-25 float-end">NO</a>
+            </div>
+        </form>
+     </div>
+ </div>

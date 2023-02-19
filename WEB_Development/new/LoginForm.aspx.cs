@@ -14,9 +14,9 @@ namespace Practice
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-            string cionstr = WebConfigurationManager.ConnectionStrings["Northwind"].ConnectionString.ToString();
+            string cionstr = WebConfigurationManager.ConnectionStrings["Employees"].ConnectionString.ToString();
             SqlConnection con =new SqlConnection(cionstr);
-            SqlCommand cmd = new SqlCommand("select* from employees where employeeid = @employeeid", con);
+            SqlCommand cmd = new SqlCommand("select* from info where EmployeeID = EmployeeID", con);
             con.Open();
             SqlDataReader reader= cmd.ExecuteReader();
             while (reader.Read())
@@ -28,10 +28,10 @@ namespace Practice
         protected void ddlEmployeeId_SelectedIndexChanged(object sender, EventArgs e)
         {
             int empId = Convert.ToInt16(ddlEmployeeId.SelectedValue);
-            string cionstr = WebConfigurationManager.ConnectionStrings["Northwind"].ConnectionString.ToString();
+            string cionstr = WebConfigurationManager.ConnectionStrings["Employees"].ConnectionString.ToString();
             SqlConnection con = new SqlConnection(cionstr);
-            SqlCommand cmd = new SqlCommand("select* from employees where employeeid = @employeeid", con);
-            cmd.Parameters.AddWithValue("@emplyeeid", empId);
+            SqlCommand cmd = new SqlCommand("select* from info where EmployeeID =EmployeeID", con);
+            cmd.Parameters.AddWithValue("EmployeeID", empId);
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             txtFName.Text = reader["Firstname"].ToString();
@@ -40,5 +40,10 @@ namespace Practice
             reader.Close();
             con.Close();
         }
-    }
+
+		protected void Button1_Click(object sender, EventArgs e)
+		{
+           
+		}
+	}
 }

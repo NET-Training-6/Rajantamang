@@ -1,4 +1,35 @@
 ﻿<h1> Student Page</h1>
+@model List<Student>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Address</th>
+		<th>Email</th>
+		<th>DOB</th>
+		<th>Gender</th>
+	</tr>
+	@foreach (Student s in Model)
+		{
+			<tr>
+			<td> @s.Name</td>
+			<td> @s.Address</td>
+			<td> @s.Email</td>
+			<td> @s.Dob</td>
+			<td> @s.Gender</td>
+			</tr>			
+		}
+	
+
+</table>
+
+
+
+
+
+
+
+
 
 <table class="table">
 	<thead>Student Details
@@ -24,7 +55,13 @@
 		</tr>
 		<tr>
 			<td>Aryan Maharjan</td>
-			<td>23</td>
+			<td>22</td>
+			<td>9843121309</td>
+			<td>March 21, 2021</td>
+		</tr>
+		<tr>
+			<td>Ipshika Bhattarai</td>
+			<td>17</td>
 			<td>9843121309</td>
 			<td>March 21, 2021</td>
 		</tr>

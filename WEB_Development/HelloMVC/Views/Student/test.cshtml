@@ -1,16 +1,16 @@
 ﻿<h1> Students Name</h1>
-
+@model int[] //model binding to return view on controller
 @{
 	String[] Names = { "Rajan Tamang", "Sagar Khatri", "Aaryan Maharjan", "Pooja Bhattarai", "Ipshika Bhattarai" };
-	int[] numbers = { 9,8,4,3,1,2,1,3,0,9};
-	var evens = numbers.Where(n => n % 2 == 0);
-	var odd = numbers.Where(n => n % 2 == 1);
+	
+	var evens = Model.Where(n => n % 2 == 0);
+	var odd = Model.Where(n => n % 2 == 1);
 
 
 }
 <h2> All numbers</h2>
  <div>
-	 @foreach( int num in numbers)
+	 @foreach( int num in Model)
 	{
 		<span> @num</span>
 	}
